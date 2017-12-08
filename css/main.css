@@ -5,7 +5,7 @@ body, html {
   color: #777;
 }
 
-.bgimg-1, .bgimg-2, .bgimg-3 {
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5, .bgimg-6 {
   position: relative;
   opacity: 0.6;
   background-attachment: fixed;
@@ -15,19 +15,35 @@ body, html {
 
 }
 .bgimg-1 {
-  background-image: url("http://www.drawingtutorials101.com/drawing-tutorials/Religions/Hinduism/vishnu/how-to-draw-Vishnu-step-0.png");
+  background-image: url("../img/1_56.jpg");
   min-height: 100%;
 }
 
 .bgimg-2 {
-  background-image: url("https://i.ytimg.com/vi/S7_niexGYEo/hqdefault.jpg");
+  background-image: url("../img/1_26.jpg");
   min-height: 100%;
 }
 
 .bgimg-3 {
-  background-image: url("http://www.srinivasagovinda.com/images/2010/release1/srinivasa-govinda-rel1-8.jpg");
-  min-height: 400px;
+  background-image: url("../img/1_9.jpg");
+  min-height: 100%;
 }
+
+.bgimg-4 {
+  background-image: url("../img/1_77.jpg");
+  min-height: 100%;
+}
+
+.bgimg-5 {
+  background-image: url("../img/1_105.jpg");
+  min-height: 100%;
+}
+
+.bgimg-6 {
+  background-image: url("../img/1_40.jpg");
+  min-height: 100%;
+}
+
 
 .caption {
   position: absolute;
