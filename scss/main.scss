@@ -1,20 +1,43 @@
+/*Variabels For sass*/
+
+/*Numbers*/
+$full-size: 100%;
+$null: 0;
+$half-size: 50%;
+$pad-mar-mid: 0 5%;
+
+/*Colors*/
+$box-shadow: rgba(255,255,255,1) 0 0 1em;
+$main-text: #777;
+$sec-text: #fff;
+$third-text: #000;
+
+/*Positions*/
+$center: center;
+
+
 body, html {
-  height: 100%;
-  margin: 0;
-  font: 400 15px/1.8 "Lato", sans-serif;
-  color: #777;
+  height: $full-size;
+  margin: $null;
+  font: 300 1em "Lato", sans-serif;
+  color: $main-text;
 }
 
 .container-fluid {
   position: relative;
   opacity: 0.6;
   background-attachment: fixed;
-  background-position: center;
+  background-position: $center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100%;
-  padding-right: 0;
-  padding-left: 0;
+  min-height: $full-size;
+  height: auto;
+  max-height: 300%;
+  padding-right: $null;
+  padding-left: $null;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   }
 
   .bgimg-1 { background-image: url("../img/1_56.jpg"); }
@@ -27,63 +50,70 @@ body, html {
 
 .caption {
   position: absolute;
-  left: 0;
-  width: 100%;
-  color: #000;
+  left: $null;
+  width: $full-size;
+  color: $third-text;
   display:flex;
   flex-wrap:wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: $center;
+  align-items: $center;
 
   .middle{
     display: inline-block;
     vertical-align: middle;
     float: none;
-    padding: 0 5%;
-    margin: 0 5%;
+    padding: $pad-mar-mid;
+    margin: $pad-mar-mid;
   }
 
   img{
-    height:50em;
+    height: 70vh;
     width: auto;
-    -webkit-border-radius:50%;
-    -moz-border-radius:50%;
-    border-radius:50%;
-    -webkit-box-shadow: rgba(255,255,255,1) 0px 0 1em;
-    -moz-box-shadow: rgba(255,255,255,1) 0 0 1em;
-    box-shadow: rgba(255,255,255,1) 0 0 1em;
+    -webkit-border-radius:$half-size;
+    -moz-border-radius:$half-size;
+    border-radius:$half-size;
+    -webkit-box-shadow: $box-shadow;
+    -moz-box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
+  }
+
+  span.border {
+    background-color: #111;
+    color: $sec-text;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 0.2em;
   }
 }
 .full{
   display: flex;
-  align-items: center;
+  align-items: $center;
 }
 
 .center{
-  top: 50%;
+  top: $half-size;
   transform: translateY(-50%);
 }
 
-.caption span.border {
-  background-color: #111;
-  color: #fff;
-  padding: 18px;
-  font-size: 25px;
-  letter-spacing: 0.2em;
-}
-
-h3 {
+h2 {
   letter-spacing: 5px;
   text-transform: uppercase;
-  font: 20px "Lato", sans-serif;
-  color: #ddd;
+  font: 1.5em "Lato", sans-serif;
+  color: $main-text;
 }
 
 .content{
-  float: left;
   height: 100vh;
   border: 2px solid black;
-  margin: 0;
+  margin: $null;
 }
 
+footer{
+  .container-fluid {
+  justify-content: space-between;
+  }
+}
+.mt-4, .my-4{
+  margin-top: 0rem!important;
+}
 /*# sourceMappingURL=main.css.map */
