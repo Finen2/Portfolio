@@ -1,47 +1,36 @@
-// makes the parallax elements
-function parallaxIt() {
 
-  // create variables
-  var $fwindow = $(window);
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-  // on window scroll event
-  $fwindow.on('scroll resize', function() {
-    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  });
+// Functions for lightbox ----------------------------------------------------------------------------------------------------------
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
 
-  // for each of content parallax element
-  $('[data-type="content"]').each(function (index, e) {
-    var $contentObj = $(this);
-    var fgOffset = parseInt($contentObj.offset().top);
-    var yPos;
-    var speed = ($contentObj.data('speed') || 1 );
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
 
-    $fwindow.on('scroll resize', function (){
-      yPos = fgOffset - scrollTop / speed;
+var slideIndex = 1;
+showSlides(slideIndex);
 
-      $contentObj.css('top', yPos);
-    });
-  });
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
-  // for each of background parallax element
-  $('[data-type="background"]').each(function(){
-    var $backgroundObj = $(this);
-    var bgOffset = parseInt($backgroundObj.offset().top);
-    var yPos;
-    var coords;
-    var speed = ($backgroundObj.data('speed') || 0 );
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-    $fwindow.on('scroll resize', function() {
-      yPos = - ((scrollTop - bgOffset) / speed);
-      coords = '40% '+ yPos + 'px';
-
-      $backgroundObj.css({ backgroundPosition: coords });
-    });
-  });
-
-  // triggers winodw scroll for refresh
-  $fwindow.trigger('scroll');
-};
-
-parallaxIt();
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+}

@@ -1,4 +1,4 @@
-/*Variabels For sass*/
+@charset "utf-8";
 
 /*Numbers*/
 $full-size: 100%;
@@ -11,6 +11,7 @@ $box-shadow: rgba(255,255,255,1) 0 0 1em;
 $main-text: #777;
 $sec-text: #fff;
 $third-text: #000;
+$mainColor: #707070;
 
 /*Positions*/
 $center: center;
@@ -19,13 +20,17 @@ $center: center;
 body, html {
   height: $full-size;
   margin: $null;
+  padding: $null;
   font: 300 1em "Lato", sans-serif;
   color: $main-text;
 }
 
+.navbar, .bg-gray{
+  background-color: $mainColor;
+}
+
 .container-fluid {
   position: relative;
-  opacity: 0.6;
   background-attachment: fixed;
   background-position: $center;
   background-repeat: no-repeat;
@@ -38,13 +43,15 @@ body, html {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  opacity: 0.6;
   }
+
 
   .bgimg-1 { background-image: url("../img/1_56.jpg"); }
   .bgimg-2 { background-image: url("../img/1_26.jpg"); }
-  .bgimg-3 { background-image: url("../img/1_9.jpg"); }
+  .bgimg-3 { background-image: url("../img/1_40.jpg"); }
   .bgimg-4 { background-image: url("../img/1_77.jpg"); }
-  .bgimg-5 { background-image: url("../img/1_40.jpg"); }
+  .bgimg-5 { background-image: url("../img/1_9.jpg"); }
   .bgimg-6 { background-image: url("../img/1_105.jpg"); }
 
 
@@ -69,15 +76,10 @@ body, html {
   img{
     height: 70vh;
     width: auto;
-    -webkit-border-radius:$half-size;
-    -moz-border-radius:$half-size;
-    border-radius:$half-size;
-    -webkit-box-shadow: $box-shadow;
-    -moz-box-shadow: $box-shadow;
-    box-shadow: $box-shadow;
+
   }
 
-  span.border {
+  .border {
     background-color: #111;
     color: $sec-text;
     padding: 18px;
@@ -104,7 +106,6 @@ h2 {
 
 .content{
   height: 100vh;
-  border: 2px solid black;
   margin: $null;
 }
 
@@ -116,4 +117,76 @@ footer{
 .mt-4, .my-4{
   margin-top: 0rem!important;
 }
+
+/** LIGHTBOX MARKUP **/
+
+.images{
+  z-index: 1;
+  align-content: space-around;
+  justify-content: space-between;
+  flex-direction:row;
+  width: 100%;
+  padding: 5% 5%;
+
+  .item.left{
+   align-self: flex-start;
+  }
+  .item.right{
+   align-self: flex-end;
+  }
+
+  img{
+    height: 30vh;
+    max-width: 100%;
+  }
+  .lightbox:target {
+  	/** Remove default browser outline */
+  	outline: none;
+
+  	/** Unhide lightbox **/
+  	display: block;
+
+    img{
+      height: 90vh;
+      margin-top: 25%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.lightbox {
+	/** Default lightbox to hidden */
+	display: none;
+
+	/** Position and style */
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+  z-index: 2;
+
+   img {
+  	/** Pad the lightbox image */
+  	max-width: 90%;
+  	max-height: 80%;
+  	margin-top: 2%;
+    z-index: 999;
+  }
+}
+
+@media screen and (max-device-width: 991px) {
+    .mobileHide{
+      display: none;
+    }
+}
+@media screen and (max-device-width: 891px) {
+    .images{
+      overflow: scroll;
+    }
+}
+
+
 /*# sourceMappingURL=main.css.map */
