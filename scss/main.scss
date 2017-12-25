@@ -8,7 +8,7 @@ $pad-mar-mid: 0 5%;
 
 /*Colors*/
 $box-shadow: rgba(255,255,255,1) 0 0 1em;
-$main-text: #777;
+$main-text: #404040;
 $sec-text: #fff;
 $third-text: #000;
 $mainColor: #707070;
@@ -25,9 +25,17 @@ body, html {
   color: $main-text;
 }
 
-.navbar, .bg-gray{
+.navbar, .bg-gray,{
   background-color: $mainColor;
 }
+
+
+.bgimg-1 { background: rgba(255,255,255,0.4) url("../img/1_56.jpg");}
+.bgimg-2 { background: rgba(255,255,255,0.4) url("../img/1_26.jpg"); }
+.bgimg-3 { background: rgba(255,255,255,0.4) url("../img/1_40.jpg"); }
+.bgimg-4 { background: rgba(255,255,255,0.4) url("../img/1_77.jpg"); }
+.bgimg-5 { background: rgba(255,255,255,0.4) url("../img/1_9.jpg"); }
+.bgimg-6 { background: rgba(255,255,255,0.4) url("../img/1_105.jpg"); }
 
 .container-fluid {
   position: relative;
@@ -43,16 +51,8 @@ body, html {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  opacity: 0.6;
+  background-blend-mode: overlay;
   }
-
-
-  .bgimg-1 { background-image: url("../img/1_56.jpg"); }
-  .bgimg-2 { background-image: url("../img/1_26.jpg"); }
-  .bgimg-3 { background-image: url("../img/1_40.jpg"); }
-  .bgimg-4 { background-image: url("../img/1_77.jpg"); }
-  .bgimg-5 { background-image: url("../img/1_9.jpg"); }
-  .bgimg-6 { background-image: url("../img/1_105.jpg"); }
 
 
 .caption {
@@ -64,6 +64,14 @@ body, html {
   flex-wrap:wrap;
   justify-content: $center;
   align-items: $center;
+
+  .svg{
+    background-image: url(../content/load.svg);
+    height:300px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .middle{
     display: inline-block;
@@ -80,11 +88,15 @@ body, html {
   }
 
   .border {
-    background-color: #111;
+    background-color: $mainColor;
     color: $sec-text;
     padding: 18px;
     font-size: 25px;
     letter-spacing: 0.2em;
+
+    img{
+      height: 300px;
+    }
   }
 }
 .full{
@@ -126,7 +138,7 @@ footer{
   justify-content: space-between;
   flex-direction:row;
   width: 100%;
-  padding: 5% 5%;
+  padding: 0 5%;
 
   .item.left{
    align-self: flex-start;
@@ -138,6 +150,7 @@ footer{
   img{
     height: 30vh;
     max-width: 100%;
+    margin: 2.5% 0;
   }
   .lightbox:target {
   	/** Remove default browser outline */
@@ -177,14 +190,20 @@ footer{
   }
 }
 
-@media screen and (max-device-width: 991px) {
+@media screen and (max-width: 991px) {
     .mobileHide{
       display: none;
     }
 }
-@media screen and (max-device-width: 891px) {
+@media screen and (max-width: 891px) {
     .images{
-      overflow: scroll;
+      justify-content: center;
+      align-content:space-between;
+      a img{
+        height: auto;
+        max-height: 16vh;
+        max-width: 100%;
+      }
     }
 }
 
